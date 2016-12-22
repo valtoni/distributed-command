@@ -1,11 +1,11 @@
-package info.boaventura.distcom.commands;
+package info.boaventura.distcom.command.oracle;
 
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class SingleCommandAbstract {
+public abstract class OracleSingleCommandAbstract {
 
   String commandTemplate;
   

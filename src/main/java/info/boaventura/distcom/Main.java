@@ -1,10 +1,10 @@
 package info.boaventura.distcom;
 
-import info.boaventura.distcom.commands.CommandChangePassword;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+import info.boaventura.distcom.command.oracle.OracleCommandChangePassword;
 
 public class Main {
 
@@ -26,7 +26,7 @@ public class Main {
 
     Commander commander = new Commander(tnsnames, user, password);
     
-    CommandChangePassword commandChangePassword = new CommandChangePassword();
+    OracleCommandChangePassword commandChangePassword = new OracleCommandChangePassword();
     commandChangePassword.set("user", user);
     commandChangePassword.set("password", password);
     commandChangePassword.set("newpassword", newPassword);

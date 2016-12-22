@@ -1,9 +1,9 @@
-package info.boaventura.distcom.commands;
+package info.boaventura.distcom.command.oracle;
 
 import java.sql.SQLException;
 import java.util.Set;
 
-public interface Command {
+public interface OracleCommand {
 
   void set(String param, String value);
   

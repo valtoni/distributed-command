@@ -1,12 +1,12 @@
-package info.boaventura.distcom.commands;
+package info.boaventura.distcom.command.oracle;
 
 import java.util.HashMap;
 
-public class CommandChangePassword extends SingleCommandAbstract implements Command {
+public class OracleCommandChangePassword extends OracleSingleCommandAbstract implements OracleCommand {
 
   private static final String CMD_CHANGE_PASS = "ALTER USER %s IDENTIFIED BY %s REPLACE %s";
   
-  public CommandChangePassword() {
+  public OracleCommandChangePassword() {
     parameters = new HashMap<String, String>();
     parameters.put("user", null);
     parameters.put("password", null);

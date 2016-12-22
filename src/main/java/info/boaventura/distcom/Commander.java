@@ -1,7 +1,7 @@
 package info.boaventura.distcom;
 
-import info.boaventura.distcom.commands.Command;
-import info.boaventura.distcom.commands.JdbcOracle;
+import info.boaventura.distcom.command.oracle.JdbcOracle;
+import info.boaventura.distcom.command.oracle.OracleCommand;
 import info.boaventura.distcom.oracle.OracleConnection;
 import info.boaventura.distcom.oracle.OrafileParser;
 
@@ -30,7 +30,7 @@ public class Commander {
   }
   
   
-  public void execute(Command command) {
+  public void execute(OracleCommand command) {
     JdbcOracle jdbcOracle;
 
     for (OracleConnection oracleConnection: connections) {
