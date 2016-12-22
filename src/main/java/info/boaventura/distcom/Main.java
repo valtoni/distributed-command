@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.springframework.shell.Bootstrap;
+
 import info.boaventura.distcom.command.oracle.OracleCommandChangePassword;
 
 public class Main {
@@ -18,7 +20,7 @@ public class Main {
    }
   }
   
-  public static void main(String[] args) {
+  public static void main1(String[] args) {
     String tnsnames = getValue("Localization of file tnsnames.ora: ");
     String user = getValue("Username: ");
     String password = getValue("Password: ");
@@ -34,5 +36,11 @@ public class Main {
     commander.execute(commandChangePassword);
 
   }
+  
+  
+  public static void main(String[] args) throws IOException {
+    Bootstrap.main(args);
+  }
+  
 
 }
