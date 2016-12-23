@@ -1,4 +1,4 @@
-package info.boaventura.distcom.command.oracle;
+package info.boaventura.distcom.command.action.oracle;
 
 import info.boaventura.distcom.common.JdbcUtil;
 

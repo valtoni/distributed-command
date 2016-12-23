@@ -5,7 +5,7 @@ import info.boaventura.distcom.common.Empty;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class OracleConnection {
+public abstract class OracleConnection implements Comparable<OracleConnection> {
 
   public static int DEFAULT_PORT = 1521;
 
@@ -51,10 +51,15 @@ public abstract class OracleConnection {
     Empty.checkRaise(port, "Connection must have a port to connect");
   }
 
-
   public List<String> getHosts() {
     return hosts;
   }
   
+  public int compareTo(OracleConnection instance) {
+    if (instance == null) {
+      return -1;
+    }
+    return name.toLowerCase().compareTo(instance.name.toLowerCase());
+  }
 
 }

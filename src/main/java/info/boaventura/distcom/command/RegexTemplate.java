@@ -1,6 +1,7 @@
 package info.boaventura.distcom.command;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,6 +23,10 @@ public class RegexTemplate {
     }
     System.out.println("IT'S OVER");
     
+  }
+  
+  public Set<String> getParams() {
+    return params.keySet();
   }
   
   public RegexTemplate(String template) {

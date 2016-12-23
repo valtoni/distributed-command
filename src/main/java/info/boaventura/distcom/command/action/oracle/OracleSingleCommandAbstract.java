@@ -1,4 +1,4 @@
-package info.boaventura.distcom.command.oracle;
+package info.boaventura.distcom.command.action.oracle;
 
 import java.sql.SQLException;
 import java.util.Collection;
@@ -13,11 +13,15 @@ public abstract class OracleSingleCommandAbstract {
   
   Map<String, String> parameters;
   
-  public void execute() throws SQLException {
+  public void execute() {
     Collection<String> values = parameters.values();
     String[] valuesArray = values.toArray(new String[]{});
     String command = String.format(commandTemplate, (Object[])valuesArray);
-    jdbcOracle.execStatement(command);
+    try {
+      jdbcOracle.execStatement(command);
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public void setConnectionInstance(JdbcOracle jdbcOracle) {

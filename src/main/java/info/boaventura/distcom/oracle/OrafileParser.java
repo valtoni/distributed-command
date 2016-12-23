@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +23,12 @@ public class OrafileParser {
   
   private String file;
   
-  private List<OracleConnection> connections;
+  private Map<String, OracleConnection> connections;
+
+  public OrafileParser(Path path) {
+    this.file = path.toString();
+    parse();
+  }
   
   public OrafileParser(String file) {
     this.file = file;
@@ -81,7 +88,7 @@ public class OrafileParser {
     }
   }  
   
-  public List<OracleConnection> getConnections() {
+  public Map<String, OracleConnection> getConnections() {
     return this.connections;
   }
   
@@ -104,7 +111,7 @@ public class OrafileParser {
   
   public static void main(String[] args) throws IOException {
     OrafileParser parser = new OrafileParser(args[0]);
-    for (OracleConnection connection: parser.getConnections()) {
+    for (OracleConnection connection: parser.getConnections().values()) {
       System.out.println("-------------------------------------------------");
       System.out.println("Name: " + connection.getName());
       System.out.println("Type: " + connection.getBaseType());

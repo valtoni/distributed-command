@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import org.springframework.shell.Bootstrap;
 
-import info.boaventura.distcom.command.oracle.OracleCommandChangePassword;
+import info.boaventura.distcom.command.action.oracle.OracleCommandChangePassword;
 
 public class Main {
 

@@ -1,6 +1,5 @@
-package info.boaventura.distcom.command.oracle;
+package info.boaventura.distcom.command.action.oracle;
 
-import java.sql.SQLException;
 import java.util.Set;
 
 public interface OracleCommand {
@@ -9,7 +8,7 @@ public interface OracleCommand {
   
   Set<String> params();
 
-  void execute() throws SQLException;
+  void execute();
   
   void setConnectionInstance(JdbcOracle jdbcOracle);
   

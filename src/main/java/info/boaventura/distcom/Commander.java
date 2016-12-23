@@ -1,16 +1,16 @@
 package info.boaventura.distcom;
 
-import info.boaventura.distcom.command.oracle.JdbcOracle;
-import info.boaventura.distcom.command.oracle.OracleCommand;
+import java.sql.SQLException;
+import java.util.Collection;
+
+import info.boaventura.distcom.command.action.oracle.JdbcOracle;
+import info.boaventura.distcom.command.action.oracle.OracleCommand;
 import info.boaventura.distcom.oracle.OracleConnection;
 import info.boaventura.distcom.oracle.OrafileParser;
 
-import java.sql.SQLException;
-import java.util.List;
-
 public class Commander {
 
-  List<OracleConnection> connections;
+  Collection<OracleConnection> connections;
   
   private String orafile;
   
@@ -26,7 +26,7 @@ public class Commander {
   }
   
   private void setupConnections() {
-    this.connections = new OrafileParser(this.orafile).getConnections();
+    this.connections = new OrafileParser(this.orafile).getConnections().values();
   }
   
   
